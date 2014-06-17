@@ -2,6 +2,16 @@
 <h3>CADASTRO DE CAMPO DE FUTEBOL</h3>
 
 <div class="clear"></div>
+
+	<c:if test="${ messages != null }">
+		<div class="alert2" >
+			<c:forEach items="${messages}" var="msg">
+						${msg}
+						<br />
+			</c:forEach>
+		</div>
+	</c:if>
+
 	<form action="/futebol/CadastrarCampoAction" method="post">
 
 		Nome:
