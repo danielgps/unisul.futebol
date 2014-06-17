@@ -9,9 +9,14 @@
 	</welcome-file-list>
 	<jsp-config>
 		<jsp-property-group>
-			<url-pattern>*.jsp</url-pattern>
-			<!-- <include-prelude>/resources/template/header.jsp</include-prelude>
-			<include-coda>/resources/template/footer.jsp</include-coda> -->
+			<url-pattern>/pages/public/*</url-pattern>
+			<include-prelude>/resources/template/header.jsp</include-prelude>
+			<include-coda>/resources/template/footer.jsp</include-coda>
+		</jsp-property-group>
+		<jsp-property-group>
+			<url-pattern>/pages/private/*</url-pattern>
+			<include-prelude>/resources/template/header-admin.jsp</include-prelude>
+			<include-coda>/resources/template/footer-admin.jsp</include-coda>
 		</jsp-property-group>
 	</jsp-config>
 </web-app>

@@ -31,4 +31,9 @@ public class Perfil implements BaseEntity {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	public boolean isAdmin(){
+		
+		return nome.equalsIgnoreCase("ADMIN");
+	}
 }

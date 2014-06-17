@@ -1,5 +1,7 @@
 package br.unisul.service;
 
+import java.util.List;
+
 import br.unisul.entity.Campo;
 import br.unisul.service.exception.ServiceException;
 
@@ -26,5 +28,11 @@ public class CampoService extends BaseService {
 
 	public void delete(Long idCampo) {
 
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Campo> list(){
+
+		return (List<Campo>) listByQuery("SELECT c FROM Campo c ORDER BY c.nome");
 	}
 }

@@ -4,16 +4,14 @@ import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import br.unisul.entity.enun.TipoPerfil;
 
 @Entity
 @Table(name = "usr__usuario")
@@ -29,17 +27,15 @@ public class Usuario implements BaseEntity {
 
 	private String mail;
 
-	private String login;
-
 	private String senha;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "data_cadastro")
 	private Calendar dataCadastro;
 
-	@Enumerated(EnumType.STRING)
-	@Column(name = "tipo_perfil")
-	private TipoPerfil tipoPerfil;
+	@ManyToOne
+	@JoinColumn(name = "id_perfil")
+	private Perfil perfil;
 
 	public Long getId() {
 
@@ -81,16 +77,6 @@ public class Usuario implements BaseEntity {
 		this.mail = mail;
 	}
 
-	public String getLogin() {
-
-		return login;
-	}
-
-	public void setLogin(String login) {
-
-		this.login = login;
-	}
-
 	public String getSenha() {
 
 		return senha;
@@ -111,13 +97,13 @@ public class Usuario implements BaseEntity {
 		this.dataCadastro = dataCadastro;
 	}
 
-	public TipoPerfil getTipoPerfil() {
+	public Perfil getPerfil() {
 
-		return tipoPerfil;
+		return perfil;
 	}
 
-	public void setTipoPerfil(TipoPerfil tipoPerfil) {
+	public void setPerfil(Perfil perfil) {
 
-		this.tipoPerfil = tipoPerfil;
+		this.perfil = perfil;
 	}
 }

@@ -1,41 +1,38 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cadastro de UsuÃ¡rio</title>
-</head>
-<body>
 
 
-	<c:if test="${ errorMessages != null }">
-		<c:forEach items="${errorMessages}" var="mensagem">
-					${mensagem}
-					<br/>
-		</c:forEach>
+<h2> CADASTRO DE USUÁRIO
+</h2>
+	<c:if test="${ messages != null }">
+		<div style="width: 100%; min-height: 10px;">
+
+			<c:forEach items="${messages}" var="msg">
+					${msg}
+					<br />
+			</c:forEach>
+		</div>
 	</c:if>
 
-	<form action="/futebol/CadastrarAction" method="post" style="height: 400px; width: 500px; border: 1px dotted black;">
+	<form action="/futebol/CadastrarAction" method="post" >
 
 		Nome:
 		<br />
-		<input name="nome" />
+		<input name="nome" placeholder="Nome" />
+		<br />
+		<br />
+
+		Telefone:
+		<br />
+		<input name="telefone" placeholder="(##) ####-####" />
 		<br />
 		<br />
 		Mail:
 		<br />
-		<input name="mail" />
-		<br />
-		<br />
-		Login:
-		<br />
-		<input name="login" />
+		<input name="mail" placeholder="E-mail / Login" />
 		<br />
 		<br />
 		Senha:
 		<br />
-		<input name="senha" />
+		<input name="senha" type="password" placeholder="Senha" />
 		<br />
 		<br />
 		<button type="submit">Cadastrar</button>
@@ -43,6 +40,3 @@
 		<br />
 		<br />
 	</form>
-
-</body>
-</html>

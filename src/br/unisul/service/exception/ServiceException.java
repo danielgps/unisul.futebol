@@ -9,9 +9,9 @@ public class ServiceException extends RuntimeException {
 
 	private List<String> messages = new ArrayList<String>();
 	
-	public String getDefaultMessage(){
+	public static String getDefaultMessage(){
 		
-		return "Ocorreu um erro ao realizar a operação, tente novamente";
+		return "Ocorreu um erro ao realizar a operaÃ§Ã£o, tente novamente";
 	}
 
 	public ServiceException() {

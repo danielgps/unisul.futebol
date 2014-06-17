@@ -13,11 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import br.unisul.entity.Usuario;
+
 @WebFilter(filterName = "AuthenticationFilter", urlPatterns = "/pages/private/*")
 public class AuthenticationFilter implements Filter {
 
 	@Override
 	public void destroy() {
+
 	}
 
 	@Override
@@ -28,10 +31,11 @@ public class AuthenticationFilter implements Filter {
 
 		HttpSession session = req.getSession();
 
-		String user_logged = (String) session.getAttribute("user_logged");
+		Usuario user_logged = (Usuario) session.getAttribute("user_logged");
 
 		if (user_logged == null) {
-			res.sendRedirect("/futebol/public/index.jsp");
+
+			res.sendRedirect("/futebol/pages/public/index.jsp");
 			return;
 		}
 
@@ -40,6 +44,7 @@ public class AuthenticationFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
+
 	}
 
 }

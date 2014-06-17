@@ -1,0 +1,161 @@
+body {
+	background: #fff url(../images/bg_adm.png) repeat-x;
+	background-position: 0 -110px;
+	color: #666;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 62.5%;
+	line-height: 20px;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background: url(../images/bg_header_adm.jpg) no-repeat top center;
+	display: block;
+	height: 189px;
+}
+
+a:active,a:link,a:visited {
+	color: #5a871b
+}
+
+a:hover {
+	color: #385411
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: #685f61;
+	text-transform: uppercase
+}
+
+h1 {
+	color: #002f4a;
+	font-family: Cabin, Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	font-style: italic;
+	margin: 0 0 20px
+}
+
+h2 {
+	color: #668836;
+	font-size: 14px;
+	font-weight: bold
+}
+
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
+	text-decoration: none
+}
+
+blockquote {
+	color: #004f7d;
+	font-size: 14px;
+	font-style: italic
+}
+
+blockquote p {
+	font-size: 14px !important
+}
+
+img {
+	border: 0
+}
+
+p {
+	font-size: 12px
+}
+
+td {
+	vertical-align: top
+}
+
+h3 {
+	color: #0070af;
+	font-family: Cabin, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-style: italic;
+	margin: 30px 0 10px;
+}
+
+.dashboard h3 {
+	color: #919191;
+	display: inline-block;
+	float: left;
+	margin: 0 15px 20px 0;
+}
+
+.aside-perfil {
+	float: left;
+	background: #f0f0f0;
+	padding: 20px;
+	width: 150px;
+	height: 400px;
+	margin-bottom: 50px;
+}
+
+.aside-content {
+	width: 720px;
+	margin-left: 20px;
+	float: left;
+	padding: 15px;
+	background: #f9f9f9;
+	border: 2px solid #f0f0f0;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	box-sizing: border-box;
+	-khtml-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	float: left;
+}
+
+.aside-perfil ul {
+	font-family: Cabin, Arial, Helvetica, sans-serif;
+	font-style: italic;
+	list-style: none;
+	margin: 20px 0 0;
+	text-transform: uppercase;
+}
+
+.aside-perfil ul li {
+	border-bottom: 1px solid #ccc;
+	margin: 10px 0;
+	padding: 0 0 5px;
+}
+
+.aside-perfil ul a {
+	display: block;
+	padding: 0;
+	line-height: 150%;
+}
+
+.alert1,.alert2,.alert3 {
+	color: #333;
+	margin: 0 0 20px;
+	padding: 11px 10px 8px 40px;
+}
+
+.alert2 {
+	background: #faf8f0 url(../images/alert2.gif) top left no-repeat;
+	border: 3px solid #f08c00;
+}
+
+.bt_other,.bt_sec,#button {
+	margin-top: 10px;
+	background: #00589a url(../images/bt_sec.png) repeat-x !important;
+	border: 0;
+	color: #fff;
+	cursor: pointer;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: auto;
+	padding: 5px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: auto;
+}
+.bt_sec:hover, #button:hover {
+background: #00467b url(../images/bt_sec.png) no-repeat 0 -30px!important;
+}

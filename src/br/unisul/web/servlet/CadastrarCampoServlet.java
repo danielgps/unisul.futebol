@@ -1,7 +1,6 @@
 package br.unisul.web.servlet;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,14 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import br.unisul.entity.Campo;
 import br.unisul.entity.enun.TipoCampo;
 import br.unisul.service.CampoService;
-import br.unisul.service.exception.ServiceException;
+import br.unisul.util.ExceptionUtil;
 
-@WebServlet("/CadastrarAction")
-public class CadastrarCampo extends HttpServlet {
+@WebServlet("/CadastrarCampoAction")
+public class CadastrarCampoServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -5343974568885211174L;
 
-	public CadastrarCampo() {
+	public CadastrarCampoServlet() {
 
 		super();
 	}
@@ -41,23 +40,17 @@ public class CadastrarCampo extends HttpServlet {
 			campo.setTipo(TipoCampo.getByString(tipo));
 
 			service.save(campo);
+			
+			request.setAttribute("messages", "Campo cadastrado com sucesso");
 
-			request.setAttribute("usuario", campo);
-
-			RequestDispatcher view = request.getRequestDispatcher("/pages/public/usuario/cadastro-usuario-result.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("/pages/private/campo/list-campo.jsp");
 			view.forward(request, response);
 
 		} catch (Exception e) {
 
-			if (e instanceof ServiceException) {
+			ExceptionUtil.handleException(e, request);
 
-				request.setAttribute("errorMessages", ((ServiceException) e).getMessages());
-			} else {
-
-				request.setAttribute("errorMessages", Arrays.asList(((ServiceException) e).getDefaultMessage()));
-			}
-
-			RequestDispatcher view = request.getRequestDispatcher("/pages/public/usuario/cadastro-usuario.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("/pages/private/campo/save-campo.jsp");
 			view.forward(request, response);
 
 		}
