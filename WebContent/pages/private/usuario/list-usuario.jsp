@@ -9,6 +9,14 @@
 
 <div class="clear"></div>
 
+<c:if test="${ messages != null }">
+	<div class="alert2">
+		<c:forEach items="${messages}" var="msg">
+					${msg}
+					<br />
+		</c:forEach>
+	</div>
+</c:if>
 
 <%
 	UsuarioService service = new UsuarioService();
@@ -58,5 +66,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
-
 </div>
+
+<input class="bt_sec f-right" value="CADASTRAR USUÁRIO" onclick="location='http://localhost:8080/futebol/pages/private/usuario/save-usuario.jsp'">

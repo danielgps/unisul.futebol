@@ -39,7 +39,7 @@
 	background-position: 0 0;
 }
 </style>
-		<a id="logo" href="http://www.jbesportes.com.br/site">Golaço Esportes &amp; Lazer</a>
+		<a id="logo" href="http://localhost:8080/futebol">Golaço Esportes &amp; Lazer</a>
 		<nav id="topNav">
 		<ul class="menu" id="nav">
 			<li>
@@ -92,7 +92,7 @@
 		<div class="aside-perfil">
 			<ul>
 				<li>
-					<a href="/futebol/pages/private/home.jsp"><img src="/futebol/resources/images/ic_perfil.gif" alt="Partidas" width="15" height="20">Minhas Partidas</a>
+					<a href="/futebol/pages/private/home.jsp"><img src="/futebol/resources/images/ic_perfil.gif" alt="Reservas" width="15" height="20">Minhas Reservas</a>
 				</li>
 				<li>
 					<a href="/futebol/pages/private/usuario/meus-dados.jsp"><img src="/futebol/resources/images/ic_editar.gif" alt="Alterar perfil" width="17" height="18">Meus Dados</a>
@@ -104,6 +104,10 @@
 					</li>
 					<li>
 						<a href="/futebol/pages/private/campo/list-campo.jsp"><img src="/futebol/resources/images/ic_editar.gif" alt="Listar Usuarios" width="17" height="18">Listar Campos [ADMIN]</a>
+					</li>
+				
+					<li>
+						<a href="/futebol/pages/private/perfil/list-perfil.jsp"><img src="/futebol/resources/images/ic_editar.gif" alt="Listar Perfis" width="17" height="18">Listar Perfis [ADMIN]</a>
 					</li>
 				
 				</c:if>

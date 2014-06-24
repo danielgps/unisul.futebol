@@ -10,6 +10,43 @@ import br.unisul.util.EmailValidator;
 
 public class UsuarioService extends BaseService {
 
+    public void saveAdmin(Usuario usuario){
+        
+        if (usuario.getMail() == null || usuario.getMail().trim().equalsIgnoreCase("")) {
+
+            throw new ServiceException("Informe o e-mail");
+        }
+        
+        if(!EmailValidator.validate(usuario.getMail())){
+            
+            throw new ServiceException("E-mail inválido");
+        }
+
+        if (usuario.getSenha() == null || usuario.getSenha().trim().equalsIgnoreCase("")) {
+
+            throw new ServiceException("Informe a senha");
+        }
+
+        if (usuario.getNome() == null || usuario.getNome().trim().equalsIgnoreCase("")) {
+
+            throw new ServiceException("Informe o nome");
+        }
+
+        Usuario _usuario = (Usuario) oneByQuery("SELECT u FROM Usuario u WHERE u.mail = ?", usuario.getMail());
+
+        if (_usuario != null) {
+
+            throw new ServiceException("Este e-mail já esta em uso, escolha outro");
+        }
+        
+        Perfil perfil = (Perfil) oneByQuery("SELECT p FROM Perfil p WHERE p.id = ?", usuario.getPerfil().getId());
+        
+        usuario.setPerfil(perfil);
+        usuario.setDataCadastro(Calendar.getInstance());
+
+        super.save(usuario);
+    }
+    
 	public void save(Usuario usuario) throws ServiceException {
 
 		if (usuario.getMail() == null || usuario.getMail().trim().equalsIgnoreCase("")) {
@@ -38,7 +75,7 @@ public class UsuarioService extends BaseService {
 
 			throw new ServiceException("Este e-mail já esta em uso, escolha outro");
 		}
-
+		
 		Perfil perfil = (Perfil) oneByQuery("SELECT p FROM Perfil p WHERE p.nome = ?", "CLIENTE");
 		
 		usuario.setPerfil(perfil);
@@ -87,5 +124,16 @@ public class UsuarioService extends BaseService {
 	public Usuario find(String mail, String password) {
 
 		return (Usuario) oneByQuery("SELECT u FROM Usuario u WHERE u.mail = ? AND u.senha = ?", mail, password);
+	}
+	
+	@SuppressWarnings("unchecked")
+    public List<Perfil> listPerfis(){
+	    
+	    return (List<Perfil>) listByQuery("SELECT p FROM Perfil p");
+	}
+	
+	public Perfil findPerfil(Long idPerfil){
+	    
+	    return getEntityManager().find(Perfil.class, idPerfil);
 	}
 }

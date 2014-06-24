@@ -10,8 +10,7 @@
 <div class="clear"></div>
 
 <c:if test="${ messages != null }">
-	<div style="width: 100%; min-height: 10px;">
-
+	<div class="alert2">
 		<c:forEach items="${messages}" var="msg">
 					${msg}
 					<br />

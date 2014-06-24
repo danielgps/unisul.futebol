@@ -12,24 +12,11 @@
 	</div>
 </c:if>
 
-<form action="/futebol/CadastrarCampoAction" method="post">
+<form action="/futebol/CadastrarPerfilAction" method="post">
 
 	Nome:
 	<br />
 	<input name="nome" />
-	<br />
-	<br />
-	Descricao:
-	<br />
-	<input name="descricao" />
-	<br />
-	<br />
-	Tipo:
-	<br />
-	<select name="tipo">
-		<option value="SOCIETY">Society</option>
-		<option value="FUTSAL">Futsal</option>
-	</select>
 	<br />
 	<br />
 	<button type="submit">Cadastrar</button>

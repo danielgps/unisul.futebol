@@ -72,7 +72,7 @@
 	background-position: 0 0;
 }
 </style>
-		<a id="logo" href="http://www.jbesportes.com.br/site">Golaço Esportes &amp; Lazer</a>
+		<a id="logo" href="http://localhost:8080/futebol">Golaço Esportes &amp; Lazer</a>
 		<nav id="topNav">
 		<ul class="menu" id="nav">
 			<li>

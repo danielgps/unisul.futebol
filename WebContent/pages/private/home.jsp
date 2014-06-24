@@ -5,23 +5,23 @@
 <%@page import="br.unisul.entity.Usuario"%>
 <%@page import="br.unisul.service.ReservaService"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
-<h3>MINHAS PARTIDAS</h3>
+<h3>MINHAS RESERVAS</h3>
 
-<!-- 
-	<c:if test="${ messages != null }">
-		<div style="width: 100%; min-height: 10px;">
+<div class="clear"></div>
 
-			<c:forEach items="${messages}" var="msg">
-					${msg}
-					<br />
-			</c:forEach>
-		</div>
-	</c:if>
- -->
+<c:if test="${ messages != null }">
+	<div class="alert2">
+		<c:forEach items="${messages}" var="msg">
+						${msg}
+						<br />
+		</c:forEach>
+	</div>
+</c:if>
 <%
-	ReservaService service = new ReservaService();
+    ReservaService service = new ReservaService();
 	Usuario usuario = (Usuario) session.getAttribute("user_logged");
 
 	List<Reserva> reservas = new ArrayList<Reserva>(service.list(usuario.getId()));
@@ -38,34 +38,35 @@
 				<td width="125" align="left">Usuario</td>
 				<td width="125" align="left">Data Cadastro</td>
 			</tr>
-			
+
 			<c:forEach items="<%=reservas%>" var="reserva" varStatus="varStatus">
 				<tr class="${varStatus.index % 1 == 0 ? 'odd' : 'even' }">
-				
+
 					<td>
-					<%
-						Reserva reserva = (Reserva) pageContext.getAttribute("reserva");;
-						SimpleDateFormat sp = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-						
-						out.print(sp.format(reserva.getDataReserva().getTime()));
-					%>
+						<%
+						    Reserva reserva = (Reserva) pageContext.getAttribute("reserva");;
+												SimpleDateFormat sp = new SimpleDateFormat("dd/MM/yyyy");
+												
+												out.print(sp.format(reserva.getDataReserva().getTime())+ " - "+ reserva.getHoraReserva().getDescricao());
+						%>
 					</td>
 					<td>
-						<c:out value="${ reserva.campo.nome }(${reserva.campo.tipo })"></c:out> 
+						<c:out value="${ reserva.campo.nome }(${reserva.campo.tipo })"></c:out>
 					</td>
 					<td>
-						<c:out value="${ reserva.usuario.nome }"></c:out> 
+						<c:out value="${ reserva.usuario.nome }"></c:out>
 					</td>
 					<td>
-					<%
-						out.print(sp.format(reserva.getDataCadastro().getTime()));
-					%>
+						<%
+						    out.print(sp.format(reserva.getDataCadastro().getTime()));
+						%>
 					</td>
 				</tr>
-				
+
 			</c:forEach>
 		</tbody>
 	</table>
 
 </div>
-<input class="bt_sec f-right" value="CADASTRAR PARTIDA" onclick="location='http://localhost:8080/futebol/pages/private/home.jsp#'">
+<input class="bt_sec f-right" value="CADASTRAR RESERVA"
+	onclick="location='http://localhost:8080/futebol/pages/private/reserva/save-reserva.jsp'">
