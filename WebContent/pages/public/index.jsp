@@ -72,7 +72,7 @@
 
 		<ul class="destaques">
 			<li>
-				<a href="#" title="Pioneira em grama sintética em Florianópolis"> <span class="destaque-titulo"> Pioneira em grama sintética em Florianópolis </span> <img class="alignleft"
+				<a href="#" title="Pioneira em grama sintética em Florianópolis"> <span class="destaque-titulo"> Pioneira em grama sintetica em Florianópolis </span> <img class="alignleft"
 					src="http://www.jbesportes.com.br/site/wp-content/uploads/2014/03/foto01-130x80.jpg" alt="Pioneira em grama sintética em Curitiba" width="130" height="80">
 				</a> Gramado e ambiente perfeito para o seu futebol, é o que o Golaço Esportes e Lazer oferece em sua estrutura diferenciada. Desde 1994 no mercado de quadras e pioneira em grama sintética em
 				Florianópolis, possui uma grade de horários abrangente e uma estrutura completa para momentos de diversão.
