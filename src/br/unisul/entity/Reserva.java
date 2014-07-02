@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
 import br.unisul.entity.enun.HorarioReserva;
 
 @Entity
-@Table(name = "reserva")
+@Table(name = "fut_reserva")
 public class Reserva implements BaseEntity {
 
     @Id

@@ -1,9 +1,8 @@
 
-
 <h2> CADASTRO DE USUÁRIO
 </h2>
 	<c:if test="${ messages != null }">
-		<div style="width: 100%; min-height: 10px;">
+		<div style="width: 100%; min-height: 10px; font-weight: bold; color: red; font-size: 14px;">
 
 			<c:forEach items="${messages}" var="msg">
 					${msg}

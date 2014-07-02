@@ -3,7 +3,7 @@
 <%@page import="java.util.List"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<h3>MEUS DADOS</h3>
+<h3>CADASTRAR USUARIO</h3>
 
 <div class="clear"></div>
 

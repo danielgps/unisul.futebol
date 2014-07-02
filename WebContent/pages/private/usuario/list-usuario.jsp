@@ -34,6 +34,7 @@
 				<td width="50" align="left">Telefone</td>
 				<td width="125" align="left">Data Cadastro</td>
 				<td width="50" align="left">Perfil</td>
+				<td width="50" align="left">Op.</td>
 			</tr>
 
 			<c:forEach items="<%=usuarios%>" var="usuario" varStatus="varStatus">
@@ -60,6 +61,9 @@
 					</td>
 					<td>
 						<c:out value="${ usuario.perfil.nome }"></c:out>
+					</td>
+					<td>
+						<a href="http://localhost:8080/futebol/pages/private/usuario/edit-usuario.jsp?idUsuario=${usuario.id}" style="color: white">editar</a>
 					</td>
 				</tr>
 

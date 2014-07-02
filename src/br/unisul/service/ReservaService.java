@@ -37,7 +37,7 @@ public class ReservaService extends BaseService {
 
         if (_reserva != null) {
 
-            throw new ServiceException("J· existe reserva neste campo na data escolhida");
+            throw new ServiceException("Este campo j√° esta reservado nesta hora");
         }
 
         reserva.setDataCadastro(Calendar.getInstance());

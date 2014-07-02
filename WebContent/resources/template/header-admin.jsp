@@ -14,11 +14,8 @@
 @import url("/futebol/resources/css/styles.css");
 
 @import url("/futebol/resources/css/styles-admin.css");
+@import url("/futebol/resources/css/jquery-ui-1.8.15.custom.css");
 </style>
-<!-- 
-<link rel="stylesheet" type="text/css" media="screen" href="http://www.jbesportes.com.br/site/wp-content/themes/jbesportes/style.css?1402794497">
- -->
-<link rel="stylesheet" type="text/css" media="screen" href="http://www.jbesportes.com.br/site/wp-content/themes/jbesportes/js/themes/le-frog/jquery-ui-1.8.15.custom.css">
 <link href="http://fonts.googleapis.com/css?family=Cabin:600italic" rel="stylesheet" type="text/css">
 </head>
 
@@ -87,6 +84,8 @@
 	<!-- wrapper -->
 	<div id="wrapper" class="dashboard">
 
+		<div class="clear"></div>
+		Bem Vindo, ${sessionScope.user_logged.nome}
 		<div class="clear"></div>
 
 		<div class="aside-perfil">

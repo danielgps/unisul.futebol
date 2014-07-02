@@ -126,6 +126,11 @@ public class UsuarioService extends BaseService {
 		return (Usuario) oneByQuery("SELECT u FROM Usuario u WHERE u.mail = ? AND u.senha = ?", mail, password);
 	}
 	
+	public Usuario find(Long idUsuario){
+		
+		return (Usuario) oneByQuery("SELECT u FROM Usuario u WHERE u.id = ?", idUsuario);
+	}
+	
 	@SuppressWarnings("unchecked")
     public List<Perfil> listPerfis(){
 	    

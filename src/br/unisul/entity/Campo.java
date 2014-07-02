@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import br.unisul.entity.enun.TipoCampo;
 
 @Entity
-@Table(name = "campo")
+@Table(name = "fut_campo")
 public class Campo implements BaseEntity {
 
 	@Id
